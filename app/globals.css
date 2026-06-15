@@ -1874,9 +1874,13 @@ footer{background:#060f1d;padding:60px 5% 0}
    RESPONSIVE — TABLET (max 1024px)
 ═══════════════════════════════════════════════ */
 @media(max-width:1024px){
+  /* Topbar — hidden on tablet & below */
+  .topbar{display:none}
+
   /* Section spacing */
   .sec{padding:80px 5%}
   .sec-title{font-size:clamp(26px,3vw,40px)}
+
 
   /* Hero */
   .hero-inner{padding:80px 5% 60px;max-width:100%}
@@ -1922,118 +1926,190 @@ footer{background:#060f1d;padding:60px 5% 0}
 ═══════════════════════════════════════════════ */
 @media(max-width:767px){
   /* Topbar */
-  .topbar{font-size:11px;padding:9px 16px}
-  .topbar-dot{display:none}
+  .topbar{display:none}
 
   /* Navbar */
-  nav{padding:0 4%;height:64px}
-  .logo{font-size:18px}
+  nav{padding:0 4%;height:60px}
+  .logo{font-size:17px}
   .hamburger{display:flex}
   .nav-links .hide-mob{display:none}
   .nav-cta{display:none!important}
 
   /* Hero */
   .hero{min-height:auto}
-  .hero-inner{padding:70px 4% 56px}
-  .hero h1{font-size:clamp(30px,8vw,46px);letter-spacing:-1px}
-  .hero-sub{font-size:15px;margin-bottom:32px}
-  .hero-badge{font-size:11px;padding:6px 13px}
-  .hero-ctas{flex-direction:column;gap:10px;margin-bottom:36px}
-  .btn-gold,.btn-outline{width:100%;justify-content:center;font-size:15px;padding:14px 24px}
-  .hero-trust{gap:12px}
-  .trust-pill{font-size:12px}
+  .hero-inner{padding:76px 5% 52px}
+  .hero h1{font-size:clamp(28px,7.5vw,42px);letter-spacing:-1px}
+  .hero-sub{font-size:15px;margin-bottom:28px}
+  .hero-badge{font-size:11px;padding:5px 12px}
+  .hero-ctas{flex-direction:column;gap:10px;margin-bottom:32px}
+  .btn-gold,.btn-outline{width:100%;justify-content:center;font-size:15px;padding:14px 20px}
+  .hero-trust{flex-wrap:wrap;gap:10px;justify-content:center}
+  .trust-pill{font-size:12px;padding:6px 12px}
 
   /* Stats */
   .stats-inner{grid-template-columns:1fr 1fr}
-  .stat-box{padding:24px 16px}
-  .stat-n{font-size:30px}
+  .stat-box{padding:20px 12px}
+  .stat-n{font-size:28px}
+  .stat-label{font-size:11px}
 
-  /* Sections */
-  .sec{padding:60px 4%}
-  .sec-title{font-size:clamp(24px,6vw,34px);letter-spacing:-0.8px}
-  .sec-sub{font-size:15px}
+  /* Generic section */
+  .sec{padding:52px 5%}
+  .sec-title{font-size:clamp(22px,6vw,32px);letter-spacing:-0.5px}
+  .sec-sub{font-size:14px;max-width:100%}
+  .eyebrow{font-size:11px}
 
   /* Pain points */
-  .pain-grid{grid-template-columns:1fr;margin-top:36px}
-  .pain-card{padding:24px 20px}
+  .pain-grid{grid-template-columns:1fr;gap:14px;margin-top:32px}
+  .pain-card{padding:22px 18px}
+  .pain-card h3{font-size:15px}
+  .pain-card p{font-size:13px}
 
   /* How It Works */
-  .steps{grid-template-columns:1fr;gap:32px;margin-top:40px}
+  .steps{grid-template-columns:1fr;gap:28px;margin-top:36px}
   .steps::after{display:none}
-  .step{padding:0}
-  .step-num{margin-bottom:16px}
-  .step-licon{margin-bottom:12px}
+  .step{padding:0 4px}
+  .step-num{width:36px;height:36px;font-size:14px;margin-bottom:14px}
+  .step h3{font-size:16px}
+  .step p{font-size:13px}
 
-  /* Occupations */
-  .occ-section{padding:60px 4%}
-  .occ-tabs{gap:8px}
-  .occ-tab{font-size:13px;padding:8px 14px}
-  .occ-card{flex:0 0 180px;min-width:180px;padding:20px 16px}
-  .occ-arrow{width:36px;height:36px;min-width:36px}
+  /* Occupations — full mobile rework */
+  .occ-section{padding:52px 0}
+  .occ-inner{padding:0 5%}
+  .occ-header{margin-bottom:32px}
+  /* Tabs: horizontal scroll, no wrap */
+  .occ-tabs{
+    display:flex;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    gap:8px;
+    margin-bottom:24px;
+    padding-bottom:6px;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+    /* extend past inner padding so tabs reach edge */
+    margin-left:-5vw;
+    margin-right:-5vw;
+    padding-left:5vw;
+    padding-right:5vw
+  }
+  .occ-tabs::-webkit-scrollbar{display:none}
+  .occ-tab{font-size:12px;padding:7px 13px;white-space:nowrap;flex-shrink:0}
+  .occ-tab-badge{width:18px;height:18px;font-size:10px}
+  /* Carousel: hide arrows on mobile — let it be touch-scrollable */
+  .occ-carousel-wrap{gap:0}
+  .occ-arrow{display:none}
+  .occ-carousel{
+    /* Full bleed with 5% padding so edge cards are visible */
+    margin-left:-5vw;
+    margin-right:-5vw;
+    padding-left:5vw;
+    padding-right:5vw;
+    gap:12px;
+    padding-bottom:16px
+  }
+  /* Snap-scroll for touch swipe */
+  .occ-carousel{scroll-snap-type:x mandatory}
+  .occ-card{
+    scroll-snap-align:start;
+    flex:0 0 calc(75vw);
+    min-width:calc(75vw);
+    padding:20px 16px
+  }
+  .occ-card-icon{width:40px;height:40px}
+  .occ-card-title{font-size:14px}
+  .occ-card-desc{font-size:12px}
+  .occ-dots{margin-top:20px}
+  .occ-cta{margin-top:32px}
+  .occ-cta .btn-gold{width:100%;justify-content:center;font-size:15px;padding:14px 20px}
 
   /* WhyUs */
-  .why-grid{grid-template-columns:1fr;gap:32px;margin-top:40px}
-  .why-img{min-height:260px}
-  .wp{padding:14px}
-  .why-points{gap:18px}
+  .why-grid{grid-template-columns:1fr;gap:28px;margin-top:36px}
+  .why-img{min-height:240px;border-radius:14px}
+  .wp{padding:12px 14px}
+  .wp-icon{width:34px;height:34px;min-width:34px}
+  .why-points{gap:14px}
+  .why-points h3{font-size:14px}
+  .why-points p{font-size:13px}
 
   /* Gallery */
-  .gallery-section{padding:60px 4%}
-  .gallery-header{margin-bottom:32px}
-  .bento-grid{grid-template-columns:1fr;gap:12px}
-  .bento-a,.bento-b,.bento-c,.bento-d,.bento-e{grid-column:auto;grid-row:auto;height:220px}
+  .gallery-section{padding:52px 5%}
+  .gallery-header{margin-bottom:28px}
+  .bento-grid{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:auto;
+    gap:10px
+  }
+  .bento-a{grid-column:1 / -1;height:200px}
+  .bento-b,.bento-c,.bento-d,.bento-e{grid-column:auto;grid-row:auto;height:150px}
 
   /* Testimonials */
-  .testi-grid{grid-template-columns:1fr;margin-top:36px}
-  .tc-card{padding:24px 20px}
+  .testi-grid{grid-template-columns:1fr;gap:14px;margin-top:32px}
+  .tc-card{padding:22px 18px}
 
   /* FAQ */
-  .faq-list{margin-top:36px}
-  .fq-q{font-size:14px;padding:18px 18px}
-  .fq-a{padding:0 18px 18px;font-size:14px}
+  .faq-list{margin-top:32px}
+  .fq{border-radius:10px}
+  .fq-q{font-size:14px;padding:16px 18px;gap:12px}
+  .fq-a{padding:0 18px 16px;font-size:13px;line-height:1.75}
 
   /* Enquiry Form */
-  .enq-section{padding:48px 4% 72px}
-  .enq-inner{grid-template-columns:1fr;gap:36px}
-  .enq-title{font-size:clamp(26px,7vw,36px)}
-  .enq-mini-stats{margin-bottom:24px}
+  .enq-section{padding:48px 5% 64px}
+  .enq-inner{grid-template-columns:1fr;gap:28px}
+  .enq-left{padding-top:0}
+  .enq-title{font-size:clamp(24px,7vw,34px)}
+  .enq-desc{font-size:14px;margin-bottom:24px}
+  .enq-mini-stats{margin-bottom:20px}
+  .enq-mini-stat{padding:14px 10px}
   .enq-stat-num{font-size:20px}
-  .enq-form{padding:20px}
-  .enq-card-header{padding:20px}
+  .enq-stat-label{font-size:10px}
+  .enq-proof-item{font-size:13px}
+  .enq-card{border-radius:14px}
+  .enq-card-header{padding:18px 20px}
+  .enq-card-header h3{font-size:16px}
+  .enq-form{padding:18px 20px;gap:12px}
   .enq-row{grid-template-columns:1fr}
+  .enq-field input,.enq-field select{padding:11px 13px;font-size:14px}
+  .enq-submit{font-size:15px;padding:14px}
 
   /* Bottom CTA */
-  .bcta{padding:72px 4%}
-  .bcta h2{font-size:clamp(26px,7vw,38px)}
-  .bcta p{font-size:16px}
-  .bcta-btns{flex-direction:column;align-items:center}
-  .btn-wa,.btn-enq{width:100%;justify-content:center}
+  .bcta{padding:64px 5%}
+  .bcta h2{font-size:clamp(24px,7vw,36px);letter-spacing:-0.5px}
+  .bcta p{font-size:15px;margin-bottom:32px}
+  .bcta-btns{flex-direction:column;align-items:stretch;gap:10px}
+  .btn-wa,.btn-enq{width:100%;justify-content:center;font-size:15px}
 
   /* Footer */
-  footer{padding:48px 4% 0}
-  .f-mid{grid-template-columns:1fr;gap:28px;padding-bottom:32px}
-  .f-top{margin-bottom:28px}
+  footer{padding:44px 5% 0}
+  .f-top{margin-bottom:24px}
+  .f-mid{grid-template-columns:1fr 1fr;gap:24px;padding-bottom:28px}
+  .f-col-title{font-size:10px}
+  .f-col a{font-size:13px}
+  .f-copy{font-size:11px;padding:18px 0 24px;line-height:1.8}
 
   /* Legal pages */
-  .legal-hero{padding:60px 4% 40px}
-  .legal-hero h1{font-size:clamp(26px,7vw,38px)}
-  .legal-body{padding:40px 4% 72px}
+  .legal-hero{padding:56px 5% 36px}
+  .legal-hero h1{font-size:clamp(24px,7vw,36px)}
+  .legal-hero p{font-size:15px}
+  .legal-body{padding:32px 5% 64px}
   .legal-inner{grid-template-columns:1fr}
   .legal-sidebar{display:none}
+  .legal-content{padding:24px 20px}
+  .lsec h2{font-size:16px}
+  .lsec p,.lsec li{font-size:14px}
 }
 
 /* ═══════════════════════════════════════════════
    RESPONSIVE — SMALL MOBILE (max 420px)
 ═══════════════════════════════════════════════ */
 @media(max-width:420px){
-  .hero h1{font-size:28px}
-  .hero-badge{font-size:10px}
-  .btn-gold,.btn-outline{font-size:14px;padding:13px 20px}
-  .occ-card{flex:0 0 160px;min-width:160px}
-  .occ-tabs{overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px;scrollbar-width:none}
-  .occ-tabs::-webkit-scrollbar{display:none}
-  .enq-form{padding:16px}
-  .enq-card-header{padding:16px 20px}
-  .stat-n{font-size:26px}
-  .bcta h2{font-size:26px;letter-spacing:-0.5px}
+  .hero h1{font-size:26px}
+  .hero-inner{padding:72px 4% 48px}
+  .btn-gold,.btn-outline{font-size:14px;padding:13px 18px}
+  .stat-n{font-size:24px}
+  .occ-card{flex:0 0 82vw;min-width:82vw}
+  .occ-tab{font-size:11px;padding:6px 11px}
+  .enq-form{padding:14px}
+  .enq-card-header{padding:14px 16px}
+  .bcta h2{font-size:23px}
+  .f-mid{grid-template-columns:1fr;gap:20px}
 }
