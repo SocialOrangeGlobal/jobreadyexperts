@@ -2073,7 +2073,7 @@ footer{background:#060f1d;padding:60px 5% 0}
   .hero-sub{font-size:15px;margin-bottom:28px}
   .hero-badge{font-size:11px;padding:5px 12px}
   .hero-ctas{flex-direction:column;gap:10px;margin-bottom:32px}
-  .btn-gold,.btn-outline{width:100%;justify-content:center;font-size:15px;padding:14px 20px}
+  .btn-gold,.btn-outline{width:100%;justify-content:center;font-size:14px;padding:12px 18px}
   .hero-trust{flex-wrap:wrap;gap:10px;justify-content:center}
   .trust-pill{font-size:12px;padding:6px 12px}
 
@@ -2151,7 +2151,7 @@ footer{background:#060f1d;padding:60px 5% 0}
   .occ-card-desc{font-size:12px}
   .occ-dots{margin-top:20px}
   .occ-cta{margin-top:32px}
-  .occ-cta .btn-gold{width:100%;justify-content:center;font-size:15px;padding:14px 20px}
+  .occ-cta .btn-gold{width:100%;justify-content:center;font-size:14px;padding:12px 18px}
 
   /* WhyUs */
   .why-grid{grid-template-columns:1fr;gap:28px;margin-top:36px}
@@ -2207,7 +2207,7 @@ footer{background:#060f1d;padding:60px 5% 0}
   .bcta h2{font-size:clamp(24px,7vw,36px);letter-spacing:-0.5px}
   .bcta p{font-size:15px;margin-bottom:32px}
   .bcta-btns{flex-direction:column;align-items:stretch;gap:10px}
-  .btn-wa,.btn-enq{width:100%;justify-content:center;font-size:15px}
+  .btn-wa,.btn-enq{width:100%;justify-content:center;font-size:14px;padding:12px 18px}
 
   /* Footer */
   footer{padding:44px 5% 0}
@@ -2235,7 +2235,7 @@ footer{background:#060f1d;padding:60px 5% 0}
 @media(max-width:420px){
   .hero h1{font-size:26px}
   .hero-inner{padding:72px 4% 48px}
-  .btn-gold,.btn-outline{font-size:14px;padding:13px 18px}
+  .btn-gold,.btn-outline{font-size:13px;padding:10px 16px}
   .stat-n{font-size:24px}
   .occ-card{flex:0 0 82vw;min-width:82vw}
   .occ-tab{font-size:11px;padding:6px 11px}
