@@ -15,13 +15,13 @@ export default function BottomCTA() {
           match for you.
         </p>
         <div className="bcta-btns">
-          <a
+          {/* <a
             href="https://wa.me/61400000000"
             className="btn-wa"
           >
             <MessageCircle size={20} strokeWidth={2} />
             Chat on WhatsApp
-          </a>
+          </a> */}
           <a href="#enquire" className="btn-enq">
             <Mail size={18} strokeWidth={2} />
             Submit Free Enquiry

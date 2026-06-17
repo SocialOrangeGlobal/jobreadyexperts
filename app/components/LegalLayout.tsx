@@ -64,10 +64,10 @@ export default function LegalLayout({ title, subtitle, lastUpdated, children }: 
                 <Mail size={14} strokeWidth={2} />
                 Email Us
               </a>
-              <a href="https://wa.me/61400000000" className="lsc-btn-gold">
+              {/* <a href="https://wa.me/61400000000" className="lsc-btn-gold">
                 <MessageCircle size={14} strokeWidth={2} />
                 WhatsApp Us
-              </a>
+              </a> */}
             </div>
 
             <div className="legal-sidebar-card lsc-disclaimer">
